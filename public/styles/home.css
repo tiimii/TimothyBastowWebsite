@@ -23,6 +23,8 @@ p {
     font-size: 2em;
 }
 
+/* ANIMATIONS */
+
 /* Keyframes for the slide-down reveal animation */
 @keyframes slideDownReveal {
     from {
@@ -35,9 +37,30 @@ p {
     }
 }
 
+/* Keyframes for the slide-right reveal animation */
+@keyframes slideRightReveal {
+    from {
+        max-width: 0;
+        opacity: 0;
+    }
+    to {
+        max-width: 500px; /* Adjust based on expected paragraph height */
+        opacity: 1;
+    }
+}
+
+
+.welcome-message {
+    overflow: hidden;
+    max-height: 200px; /* Adjust based on expected h2 height */
+    opacity: 0;  /* Set initial opacity to 0 */
+    animation: slideRightReveal 2s forwards 0.5s; /* 1.5s duration, adjust as needed */
+}
+
 /* Applying the animation to the paragraph */
 .home-paragraph {
     overflow: hidden; /* Hide content outside the element's box */
     max-height: 500px; /* Adjust based on expected paragraph height */
-    animation: slideDownReveal 4s forwards; /* 1.5s duration, adjust as needed */
+    opacity: 0;  /* Set initial opacity to 0 */
+    animation: slideDownReveal 4s forwards 1s; /* 1.5s duration, adjust as needed */
 }
