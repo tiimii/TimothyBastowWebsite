@@ -1,0 +1,12 @@
+.nav-item {
+    /* Specify the properties to transition and the duration */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-item:hover {
+    /* Change the text color on hover */
+    color: #C7F0BC;
+    
+    /* Enlarge the text by 10% on hover */
+    transform: scale(1.1);
+}

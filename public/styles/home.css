@@ -1,7 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Lugrasimo&display=swap');
+
 body {
     background-color: #333333;
 }
 h1 {
+    font-family: 'Lugrasimo', cursive;
     color: #C7F0BC;
     text-align: center;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #C7F0BC;
+    text-align: center;
+    font-size: 4em;
+}
+
+p {
+    font-family: 'Cormorant Garamond', serif;
+    color: #C7F0BC;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Keyframes for the slide-down reveal animation */
+@keyframes slideDownReveal {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px; /* Adjust based on expected paragraph height */
+        opacity: 1;
+    }
+}
+
+/* Applying the animation to the paragraph */
+.home-paragraph {
+    overflow: hidden; /* Hide content outside the element's box */
+    max-height: 500px; /* Adjust based on expected paragraph height */
+    animation: slideDownReveal 4s forwards; /* 1.5s duration, adjust as needed */
 }
