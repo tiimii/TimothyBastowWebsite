@@ -3,6 +3,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const ejsMate = require('ejs-mate')
 const methodOverride = require('method-override')
+const morgan = require('morgan')
 
 // Connecting to database
 mongoose.connect('mongodb://localhost:27017/yelp-camp')
@@ -18,8 +19,10 @@ app.engine('ejs', ejsMate)
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
+app.use(morgan('tiny'))
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
+app.set('styles', path.join(__dirname, 'styles'))
 
 
 app.get('/', (req, res) => {
